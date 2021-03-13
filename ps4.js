@@ -135,8 +135,8 @@ function setupRW() {
 			'<tr>'+
 			'<td align="center" colspan="2" >'+
 			'<a href="#" id="hen" class="button" onclick="toggle_payload(\'hen\'); return false" style="width:28%">HEN</a>&nbsp;'+
-			'<a href="#" id="henb" class="button" onclick="toggle_payload(\'henb\'); return false" style="width:28%">HEN 2.1.3 BETA</a>&nbsp;'+
-			'<a href="#" id="spoof" class="button" onclick="toggle_payload(\'spoof\'); return false" style="width:28%">Spoof 9.99</a>&nbsp;'+
+			'<a href="#" id="henb" class="button" onclick="toggle_payload(\'henb\'); return false" style="width:28%">HEN BETA</a>&nbsp;'+
+			'<a href="#" id="fix30391" class="button" onclick="toggle_payload(\'fix30391\'); return false" style="width:28%">CE-30391-6 Fix</a>&nbsp;'+
 			'</td>'+
 			'</tr>'+
 			'<tr><td><br/></td></tr>'+
@@ -153,25 +153,25 @@ function setupRW() {
 			'</tr><tr><td><br/></td></tr>'+
 			'<tr>'+
 			'<td align="center" colspan="2"><a href="#" id="dumper" class="button" onclick="toggle_payload(\'dumper\'); return false" style="width:43%">Dumper</a>&nbsp;'+
-			'<a href="#" id="gtam132" class="button" onclick="toggle_payload(\'gtam132\'); return false" style="width:43%">GTAV M1 1.32</a>&nbsp;</td>'+
+			'<a href="#" id="enablebrowser" class="button" onclick="toggle_payload(\'enablebrowser\'); return false" style="width:43%">Enable Browser</a>&nbsp;</td>'+
 			'</tr><tr><td><br/></td></tr>'+
 			'<tr>'+
 			'<tr>'+
 			'<td align="center" colspan="2">'+
-			'<a href="#" id="restore" class="button" onclick="toggle_payload(\'restore\'); return false" style="width:43%">Restore</a>&nbsp;'+
-			'<a href="#" id="fix30391" class="button" onclick="toggle_payload(\'fix30391\'); return false" style="width:43%;border-radius: 5px 0px 0px 5px;">CE-30391-6 Fix</a>&nbsp;'+
+			'<a href="#" id="restore" class="button" onclick="toggle_payload(\'restore\'); return false" style="width:43%">DB Restore</a>&nbsp;'+
+			'<a href="#" id="histblock" class="button" onclick="toggle_payload(\'histblock\'); return false" style="width:43%;border-radius: 5px 0px 0px 5px;">History Blocker</a>&nbsp;'+
 			'</td>'+
 			'</tr><tr><td><br/></td></tr>'+
 			'<tr>'+
 			'<td align="center" colspan="2"><a href="#" id="ftp" class="button" onclick="toggle_payload(\'ftp\'); return false" style="width:43%">FTP</a>&nbsp;'+
-			'<a href="#" id="backup" class="button" onclick="toggle_payload(\'backup\'); return false" style="width:43%">BackUp</a>&nbsp;</td>'+
+			'<a href="#" id="backup" class="button" onclick="toggle_payload(\'backup\'); return false" style="width:43%">DB BackUp</a>&nbsp;</td>'+
 			'</tr><tr><td><br/></td></tr>'+
 			'<tr>'+
 			'<td align="center" colspan="2"><a href="#" id="todex" class="button" onclick="toggle_payload(\'todex\'); return false" style="width:43%">To-DEX</a>&nbsp;'+
 			'<a href="#" id="webrte" class="button" onclick="toggle_payload(\'webrte\'); return false" style="width:43%">WebRTE</a>&nbsp;</td>'+
 			'</tr><tr><td><br/></td></tr>'+
 			'<tr>'+
-			'<td align="center" colspan="2"><a href="#" id="linuxloader" class="button" onclick="toggle_payload(\'linuxloader\'); return false" style="width:43%">Linux Loader</a>&nbsp;'+
+			'<td align="center" colspan="2"><a href="#" id="linuxloader" class="button" onclick="toggle_payload(\'Linux 3GB\'); return false" style="width:43%">Linux Loader</a>&nbsp;'+
 			'<a href="#" id="ps4debug" class="button" onclick="toggle_payload(\'ps4debug\'); return false" style="width:43%">PS4 Debug</a>&nbsp;</td>'+
 			'</tr>';
 	document.getElementById("div1").remove();
