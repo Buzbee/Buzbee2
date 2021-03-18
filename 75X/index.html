@@ -71,13 +71,14 @@
 
 	</style>
 	<head>
-		<title>PS4 Jailbreak 7.55</title>
+		<title>PS4 Jailbreak 7.5X</title>
 	</head>
 	<body onload="go()" class="bg">
 		<script>
-			window.applicationCache.ondownloading=function(){document.getElementById("progress").innerHTML="Page Caching Started!!";localStorage.is755Cached=false;};
+			if(window.applicationCache.status==2){localStorage.is75XCached=true;}
+			window.applicationCache.ondownloading=function(){document.getElementById("progress").innerHTML="Page Caching Started!!";localStorage.is75XCached=false;};
 			window.applicationCache.onprogress=function(a){document.getElementById("myBar").style.width=(Math.round(100*(a.loaded/a.total)))+"%";document.getElementById("myBar").innerHTML=(Math.round(100*(a.loaded/a.total)))+"%";};
-			window.applicationCache.oncached=function(){document.getElementById("progress").innerHTML="Page Cached Successfully!!";localStorage.is755Cached=true;setTimeout(function(){document.getElementById("progress").innerHTML="Turn Off the Internet & Reopen the Page to Run the Exploit!!"; }, 1500);};
+			window.applicationCache.oncached=function(){document.getElementById("progress").innerHTML="Page Cached Successfully!!";localStorage.is75XCached=true;setTimeout(function(){document.getElementById("progress").innerHTML="Turn Off the Internet & Reopen the Page to Run the Exploit!!"; }, 1500);};
 		</script>
 		<script>
 			var width = 0;
@@ -100,7 +101,8 @@
 		var scriptCode = '';
 
 		function preloadScripts(lst)
-		{
+		{	
+			scriptCode = '';
 			for(var i = 0; i < lst.length; i++)
 			{
 				var xhr = new XMLHttpRequest();
@@ -109,21 +111,60 @@
 				scriptCode += xhr.responseText + '\n';
 			}
 		}
-
-		function done()
-		{
-			if(main_ret == 0 || main_ret == 179){
-				document.getElementById("progress").innerHTML="Payload Loaded Successfully!!";
-				read_ptr_at(0);
-			}
-			else{
-				alert("Jailbreak failed! Reboot your PS4 and try again.");
-			}
+		
+		function done(){
+			setTimeout(function(){document.getElementById("progress").innerHTML="PS4 Jailbreak 7.5X";}, 1000);
+			document.getElementById("myProgress").remove();
+			document.getElementById('load').innerHTML='<tr>'+
+					'<td align="center" colspan="2"><a href="#" id="exploit_old" class="button" onclick="toggle_payload(\'exploit_old\'); return false" style="width:43%">Old Exploit</a>&nbsp;'+
+					'<a href="#" id="exploit" class="button" onclick="toggle_payload(\'exploit\'); return false" style="width:43%">New Exploit</a>&nbsp;</td>'+
+					'</tr><tr><td><br/></td></tr>'+
+					'<tr>'+
+					'<td align="center" colspan="2" >'+
+					'<a href="#" id="mira750" class="button" onclick="toggle_payload(\'mira750\'); return false" style="width:29%">MIRA 7.50</a>&nbsp;'+
+					'<a href="#" id="mira751" class="button" onclick="toggle_payload(\'mira751\'); return false" style="width:29%">MIRA 7.51</a>&nbsp;'+
+					'<a href="#" id="mira755" class="button" onclick="toggle_payload(\'mira755\'); return false" style="width:29%">MIRA 7.55</a>&nbsp;'+
+					'</td>'+
+					'</tr>'+
+					'<tr><td><br/></td></tr>'+
+					'<tr>'+
+					'<td colspan="2" align="center"><hr><br></td>'+
+					'</tr>'+
+					'<tr>'+
+					'<td align="center" colspan="2"><a href="#" id="app2usb" class="button" onclick="toggle_payload(\'app2usb\'); return false" style="width:44.5%">App2USB</a>&nbsp;'+
+					'<a href="#" id="binloader" class="button" onclick="toggle_payload(\'binloader\'); return false" style="width:44.5%">Bin Loader</a>&nbsp;</td>'+
+					'</tr><tr><td><br/></td></tr>'+
+					'<tr>'+
+					'<td align="center" colspan="2"><a href="#" id="disableupdates" class="button" onclick="toggle_payload(\'disableupdates\'); return false" style="width:44.5%">Disable Updates</a>&nbsp;'+
+					'<a href="#" id="enableupdates" class="button" onclick="toggle_payload(\'enableupdates\'); return false" style="width:44.5%">Enable Updates</a>&nbsp;</td>'+
+					'</tr><tr><td><br/></td></tr>'+
+					'<tr>'+
+					'<td align="center" colspan="2"><a href="#" id="dumper" class="button" onclick="toggle_payload(\'dumper\'); return false" style="width:29%">Dumper</a>&nbsp;'+
+					'<a href="#" id="ftp" class="button" onclick="toggle_payload(\'ftp\'); return false" style="width:29%">FTP</a>&nbsp;'+
+					'<a href="#" id="enablebrowser" class="button" onclick="toggle_payload(\'enablebrowser\'); return false" style="width:29%">Enable Browser</a>&nbsp;</td>'+
+					'</tr><tr><td><br/></td></tr>'+
+					'<tr>'+
+					'<tr>'+
+					'<td align="center" colspan="2">'+
+					'<a href="#" id="backup" class="button" onclick="toggle_payload(\'backup\'); return false" style="width:29%">Backup</a>&nbsp;'+
+					'<a href="#" id="restore" class="button" onclick="toggle_payload(\'restore\'); return false" style="width:29%">Restore</a>&nbsp;'+
+					'<a href="#" id="historyblocker" class="button" onclick="toggle_payload(\'historyblocker\'); return false" style="width:29%">History Blocker</a>&nbsp;</td>'+
+					'</tr><tr><td><br/></td></tr>'+
+					'<tr>'+
+					'<td align="center" colspan="2"><a href="#" id="renamer" class="button" onclick="toggle_payload(\'rifrenamer\'); return false" style="width:29%">Rif Renamer</a>&nbsp;'+
+					'<a href="#" id="todex" class="button" onclick="toggle_payload(\'todex\'); return false" style="width:29%">To-Dex</a>&nbsp;'+
+					'<a href="#" id="disableaslr" class="button" onclick="toggle_payload(\'disableaslr\'); return false" style="width:29%">Disable ASLR</a>&nbsp;</td>'+
+					'</tr><tr><td><br/></td></tr>'+
+					'<tr>'+
+					'<td align="center" colspan="2"><a href="#" id="kerneldumper" class="button" onclick="toggle_payload(\'kerneldumper\'); return false" style="width:29%">Kernel Dumper</a>&nbsp;'+
+					'<a href="#" id="kernelclock" class="button" onclick="toggle_payload(\'kernelclock\'); return false" style="width:29%">Kernel Clock</a>&nbsp;'+
+					'<a href="#" id="fancontrol" class="button" onclick="toggle_payload(\'fancontrol\'); return false" style="width:29%">Fan Control</a>&nbsp;</td>'+
+					'</tr><tr><td><br/></td></tr>';
 		}
-
-		window.miraloader = function()
+		
+		window.midExploit = function()
 		{
-			preloadScripts(['blob.js', 'jb.js', 'mira.js', 'netcat.js']);
+			preloadScripts(['common/exploit.js']);
 		}
 
 		window.postExploit = function()
@@ -135,11 +176,21 @@
 			}, 100);
 
 		};
+		
+		window.postPayload = function()
+		{
+			setTimeout(function()
+			{	
+				eval.call(window, scriptCode);
+				//done();
+			}, 100);
+
+		};
 
 		</script>
-		<script src="utils.js"></script>
-		<script src="int64.js"></script>
-		<script src="ps4.js"></script>
+		<script src="./webkit/utils.js"></script>
+		<script src="./webkit/int64.js"></script>
+		<script src="./webkit/ps4.js"></script>
 		<h1 id="progress" class="titlehead">Loading.. Please Wait !!</h1><hr><br>
 		<button style="opacity:0" id="input1" onfocus="handle2()"></button>
 		<button style="opacity:0" id="input2"></button>
